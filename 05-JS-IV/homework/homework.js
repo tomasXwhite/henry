@@ -1,7 +1,7 @@
 // No cambies los nombres de las funciones.
 
 function crearGato(nombre, edad) {
-  // Crear un nuevo objeto con la propiedad "nombre" y el valor definido como el argumento "nombre".
+  // Crear un nuevo objeto con la propiedad nomb"re" y el valor definido como el argumento "nombre".
   // Agrega una propiedad al objeto con el nombre "edad" y usa el valor definido en el argumento "edad"
   // Agrega un método (funcion) llamado "meow" que devuelva el string "Meow!"
   // Devuelve el objeto
@@ -9,12 +9,12 @@ function crearGato(nombre, edad) {
   var gato = {
     nombre: nombre,
     edad: edad,
-    meow: function() {
-      return "meow!";
-    }
-  }
+    meow: function () {
+      return "Meow!";
+    },
+  };
+  return gato;
 }
-
 
 function agregarPropiedad(objeto, property) {
   // Agrega una propiedad al objeto (argumento "objeto") con el valor `null`
@@ -37,45 +37,44 @@ function multiplicarNumeroDesconocidoPorCinco(objetoMisterioso) {
   // "objetoMisterioso" tiene una propiedad llamada "numeroMisterioso"
   // Multiplica el numeroMisterioso por 5 y devuelve el producto
   // Tu código:
-return objetoMisterioso.numeroMisterioso *5;
+  return objetoMisterioso.numeroMisterioso * 5;
 }
 
 function eliminarPropiedad(objeto, unaPropiedad) {
-  // Elimina la propiedad de objeto cuyo nombre está pasado por el parametro unaPropiedad 
+  // Elimina la propiedad de objeto cuyo nombre está pasado por el parametro unaPropiedad
   // tip: tenes que usar bracket notation
   // Devuelve el objeto
   // Tu código:
-delete objeto[unaPropiedad]
-return objeto;
+  delete objeto[unaPropiedad];
+  return objeto;
 }
 
 function nuevoUsuario(nombre, email, password) {
   // Crea un nuevo objeto con las propiedades coincidiendo con los argumentos que se pasan a la función
   // Devuelve el objeto
   // Tu código:
-var objeto = {
-  nombre: nombre,
-  email: email,
-  password: password, 
-}
-return objeto
+  var objeto = {
+    nombre: nombre,
+    email: email,
+    password: password,
+  };
+  return objeto;
 }
 
 function tieneEmail(usuario) {
   // Devuelve "true" si el usuario tiene un valor definido para la propiedad "email"
   // De lo contratio, devuelve "false"
   // Tu código:
-  usuario.email ? true : false;   //ternario, un alternativo al condicional if. Siestoesverdadero ? hazesto : sinohazesto
-}                                 //
-
-
+  return usuario.email ? true : false; //ternario, un alternativo al condicional if. Siestoesverdadero ? hazesto : sinohazesto
+}
 
 function tienePropiedad(objeto, propiedad) {
   // Devuelve "true" si el objeto (parámetro "objeto") tiene una propiedad (key) cuyo nombre es igual al valor del argumento "propiedad"
   // "propiedad" es un string
   // De lo contrario, devuelve "false"
   // Tu código:
-  if(objeto.hasOwnProperty(propiedad)) {   //objeto.hhasOwnProperty[propiedad]
+  if (objeto.hasOwnProperty(propiedad)) {
+    //objeto.hhasOwnProperty[propiedad]
     return true;
   } else return false;
 }
@@ -85,14 +84,14 @@ function verificarPassword(usuario, password) {
   // Devuelve "true" si coinciden
   // De lo contrario, devuelve "false"
   // Tu código:
-  return usuario.password === password ? true : false //si son iguales que me devuelva true sino false
-}// el "password es algo que ya esta dicho, pero el usuario es lo que envia el usuario, entonces preguntamos lo que hay dentro de password coincide con lo que pone en usuario"
+  return usuario.password === password ? true : false; //si son iguales que me devuelva true sino false
+} // el "password es algo que ya esta dicho, pero el usuario es lo que envia el usuario, entonces preguntamos lo que hay dentro de password coincide con lo que pone en usuario"
 
 function actualizarPassword(usuario, nuevaPassword) {
   // Reemplaza la contraseña existente en el objeto "usuario" con el valor de "nuevagPassword"
   // Devuelve el objeto
   // Tu código:
-  usuario.password = nuevaPassword;    //cambiamos el valor no el atributo
+  usuario.password = nuevaPassword; //cambiamos el valor no el atributo
   return usuario;
 }
 
@@ -170,7 +169,6 @@ function pasarUsuarioAPremium(usuarios) {
     // usuarios[i] es el que este en la posicion i
     usuarios[i].esPremium = true; // para cada usuario, setea esPremium en "true"
     // usuarios = [{ nombre: 'juan', esPremium: true }, { nombre: 'tomas', esPremium: true }]
-    
   }
   return usuarios;
 }
@@ -183,9 +181,8 @@ function sumarLikesDeUsuario(usuario) {
   // Devuelve la suma
   // Tu código:
   var total = 0;
-  for (let i = 0; i < usuario.post.lenght; i++) {
-    total = total + usuario.post[i].likes;
-    
+  for (let i = 0; i < usuario.posts.length; i++) {
+    total = total + usuario.posts[i].likes;
   }
   return total;
 }
@@ -201,9 +198,9 @@ function agregarMetodoCalculoDescuento(producto) {
   // producto.calcularPrecioDescuento() -> 20 - (20 * 0.2)
   // Tu código:
 
-  producto.calcularPrecioDescuento = function() {
-    return producto.precio - (producto.precio * producto.porcentajeDeDescuento);
-  }
+  producto.calcularPrecioDescuento = function () {
+    return producto.precio - producto.precio * producto.porcentajeDeDescuento;
+  };
 
   // ahora, puedo hacer:
   // product.calcularPrecioDescuento(); y esto va a devolver un
@@ -243,5 +240,5 @@ module.exports = {
   agregarAmigo,
   pasarUsuarioAPremium,
   sumarLikesDeUsuario,
-  agregarMetodoCalculoDescuento
+  agregarMetodoCalculoDescuento,
 };
